@@ -207,6 +207,7 @@ $(function() {
 
 							// 接続先ipアドレスを取得(指定がない場合は、localhost)
 							this._ip = Utils.getUrlParam('ip', 'localhost')
+							var port = Utils.getUrlParam('port', '4035')
 
 							// accessTokenをcookieから取得
 							this._accessToken = this._loadAccessToken();
@@ -220,7 +221,7 @@ $(function() {
 								dConnect.setExtendedOrigin('file://');
 							}
 							dConnect.setHost(this._ip);
-							dConnect.setPort(8888);
+							dConnect.setPort(port);
 							dConnect
 									.setSSLEnabled(location.protocol === 'https:');
 							// this._openWebsocketIfNeeded(this._accessToken);
